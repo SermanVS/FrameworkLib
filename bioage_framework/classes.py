@@ -15,7 +15,7 @@ class ChatModel:
                 '''
         }]
         self.headers = {
-            'Authorization': f'Bearer {self.api_key}',
+            'Authorization': f'Bearer {api_key}',
             'Content-Type': 'application/json',
             'accept': 'application/json',
             'charset': 'utf-8'
@@ -30,8 +30,8 @@ class ChatModel:
         }
         self.data_input = data_input
 
-    def query(self):
-        self.prepare_query('What does an increased level of albumin mean?') #  Test prompt
+    def query(self, prompt):
+        self.prepare_query(prompt)
         data_input_json = json.dumps(self.data_input).encode('utf-8')
         
         num_tries = 2
